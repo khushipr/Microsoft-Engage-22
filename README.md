@@ -10,7 +10,7 @@ Sentiment Analysis application using face recognitions built using flask, OpenCV
 
 2. To start the app, clone this repo and move to the project directory in the command prompt. 
 Type: 
-`python3 camera_flask_app.py`
+- `python3 camera_flask_app.py`
 
 3. Now, copy-paste http://127.0.0.1:5000/ into your favorite internet browser and that's it.
 
