@@ -4,9 +4,11 @@ Sentiment Analysis application using face recognitions built using flask, OpenCV
 ## Procedure to run the app:
 
 1. To run this app, you should have python, flask, FER and OpenCV installed on your PC.
-`pip install flask`
-`pip install fer`
-`pip install opencv-python`
+> `pip install flask`
+> 
+> `pip install fer`
+> 
+> `pip install opencv-python`
 
 2. To start the app, clone this repo and move to the project directory in the command prompt. 
 Type: 
