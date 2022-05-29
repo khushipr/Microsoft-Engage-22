@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+  <title>Sentiment Analysis</title>
+  <meta charset="utf-8">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .row-no-padding {
+        margin-left: 0%;
+        margin-right: 0%;
+      padding-right: 0%;
+      padding-left: 0%;
+      width: 100%;
+    }
+    .navbar {
+      min-height: 80px;
+      background-color: rgb(67, 72, 78);
+      border-radius: 0%;
+      border-color: rgb(67, 72, 78);
+    }
+    .navbar.container-fluid { 
+      min-height: 80px;
+    }
+    .btn {
+      font-size: 17px;
+    }
+    .left-align {
+      position: relative;
+    }
+    ul { 
+      display: block;
+      padding: 0;
+    }
+    </style>
+</head>
+<body>
+  <div class="container row-no-padding">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        
+        <div class="navbar-header" style="margin-top: 15px;"> 
+          <a class="navbar-brand" style="color: white;" href="/">Microsoft Engage 2022</a>
+        </div>
+        <div class="left-align">
+          <ul class="nav navbar-nav" style="margin-top: 15px; float: right">
+            <li style="float: right;"><a href="#" style="color: white;" >Hi User !</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="page-header" style="margin-left: 15px;">
+      <h1>Sentiment Analysis using Face Recognition</h1>      
+    </div>
+    <div class="row">
+        <div class="col-lg-12  offset-lg-2">
+          <div class="row">
+            <div class="col-sm-5 col-lg-5 col-md-5">
+            <h2 class="mt-5" style="padding-left: 15px;">Your Current Sentiment Analysis !</h2>
+            </div>
+            <div class="col-sm-7 col-lg-7 col-md-7">
+              <img src="{{ url_for('static', filename='emotions.gif') }}" alt="emotions gif" style="width:700px;height:70px;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-lg-4 col-md-4" style="margin-left: 25px;">
+			        <canvas id="barChart"></canvas>
+              <h4>Your highest emotion is {{ emotion }} with a score of {{ score }}.</h4>        
+            </div>
+            <div class="col-sm-5 col-lg-5 col-md-5">
+              <img src="{{ url_for('static', filename='shot.jpg') }}" alt="" style="height: 350px;">
+            </div>
+          </div>
+<script>
+    // Bar chart
+
+    var barData = {
+        labels : [
+          {% for item in keys %}
+           "{{ item }}",
+          {% endfor %}
+	],
+
+        datasets : [{
+          data : [
+            {% for item in values %}
+               "{{ item }}",
+              {% endfor %}
+	    ]
+          }
+        ]
+      }
+
+     // get bar chart canvas
+     var mychart = document.getElementById("barChart").getContext("2d");
+
+   
+
+     // draw bar chart
+     new Chart(mychart).Bar(barData, {
+       
+       }
+     );
+     
+</script>
+            
+          </div>			
+</div>
+</div>
+
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-dark" href=#>Microsoft.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>
+</body>
+</html>

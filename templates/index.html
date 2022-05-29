@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+  <title>Sentiment Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+	.row-no-padding {
+  		margin-left: 0%;
+  		margin-right: 0%;
+		padding-right: 0%;
+		padding-left: 0%;
+		width: 100%;
+	}
+	.navbar {
+		min-height: 80px;
+		background-color: rgb(67, 72, 78);
+		border-radius: 0%;
+		border-color: rgb(67, 72, 78);
+	}
+	.navbar.container-fluid { 
+		min-height: 80px;
+	}
+	.btn {
+		font-size: 17px;
+	}
+	.left-align {
+		position: relative;
+	}
+	ul { 
+		display: block;
+		padding: 0;
+	}
+  </style>
+</head>
+<body>
+<div class="container row-no-padding">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			
+		  <div class="navbar-header" style="margin-top: 15px;">
+			
+			<a class="navbar-brand" style="color: white;" href="#">Microsoft Engage 2022</a>
+		  </div>
+		  <div class="left-align">
+		  <ul class="nav navbar-nav" style="margin-top: 15px; float: right">
+			<li><a href="#" style="color: white;" >Hi User !</a></li>
+		  </ul></div>
+		</div>
+	</nav>
+	<div class="page-header" style="margin-left: 15px;">
+		<h1>Sentiment Analysis using Face Recognition</h1>      
+	</div>
+    <div class="row" style="margin-left: 15px;">
+        <div class="col-lg-12 offset-lg-2">
+
+			<div class="row">
+				<div class="col-sm-4 col-lg-4 col-md-4">
+            		<h2 class="mt-5">Let's analyse your mood !</h2>
+				</div>
+				<div class="col-sm-8 col-lg-8 col-md-8">
+					<img src="{{ url_for('static', filename='emotions.gif') }}" alt="emotions gif" style="width:700px;height:70px;">
+				</div></div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-sm-6 col-lg-6 col-md-6">
+					<form method="post" action="{{ url_for('tasks') }}">
+					<input type="submit" class="btn btn-primary" style="margin-left: 15px; margin-bottom: 10px;" value="Stop/Start" name="stop" /><br>
+					<input type="submit" class="btn btn-primary" style="margin-left: 15px; margin-bottom: 10px;" value="Capture" name="click"/><br>
+					<input type="submit" class="btn btn-primary" style="margin-left: 15px; margin-bottom: 10px;" value="Start/Stop Recording" name="rec" /><br>
+					<input type ="submit" class="btn btn-primary" style="margin-left: 15px; margin-bottom: 10px;" value="Sentiment Analysis" name="analyse" /><br>
+					</form>
+				</div>
+				<div class="col-sm-6 col-lg-6 col-md-6">
+					<img src="{{ url_for('video_feed') }}" height="50%%">
+				</div>
+			</div>
+			<h3 class="instructions" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Instructions:</h3>
+			<ol style="font-family:courier;">
+			<li>Stop/Start : Toggle between stop or start live streaming</li>
+			<li>Capture : Take still shot and save it in the 'shots' directory</li>
+			<li>Sentiment Analysis : Analyse your current mood</li>
+			<li>Start/Stop Recording : Toggle between starting and stopping a video recording</li> </ol>	
+        </div>
+    </div>
+	<br>
+	<footer class="bg-light text-center text-lg-start">
+		<!-- Copyright -->
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		  © 2022 Copyright:
+		  <a class="text-dark" href=#>Microsoft.com</a>
+		</div>
+		<!-- Copyright -->
+	  </footer>
+</div>
+</body>
