@@ -14,9 +14,8 @@ Type: 
 
 3. Now, copy-paste http://127.0.0.1:5000/ into your favorite internet browser and that's it.
 
-> Click on the Capture button to click a picture.
->
-> Click on the Sentiment Analysis button to get the analysis of the clicked picture.
+- Click on the Capture button to click a picture.
+- Click on the Sentiment Analysis button to get the analysis of the clicked picture.
 
 ## Submission By:
 Khushi Prasad
